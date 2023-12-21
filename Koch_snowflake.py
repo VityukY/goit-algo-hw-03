@@ -28,7 +28,7 @@ def draw_koch_snowflake(order, size=300):
 
 
 try:
-    recursion_level = int(input("Введіть рівень рекурсії (ціле число): "))
+    recursion_level = int(input("Введіть рівень деталізації (ціле число): "))
     draw_koch_snowflake(recursion_level)
 except ValueError:
     print("Будь ласка, введіть ціле число.")
