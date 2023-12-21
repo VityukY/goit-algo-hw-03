@@ -26,7 +26,6 @@
    -- виклик перевірки чибув переданий кінцева точка. якшо ні, створити папку в "звідки"
      
 """
-# оброка винятків? // // якшо доступ заборонений до файлу??
 
 from pathlib import Path
 import shutil
@@ -80,7 +79,10 @@ def folder_handler(path, new_directory_path):
         if data.is_file():
             file_copy_handler(data, new_directory_path)
         else:
-            folder_handler(data, new_directory_path)
+            try:
+                folder_handler(data, new_directory_path)
+            except Exception as ex:
+                print(f"Error during folder opening: {ex}")
 
 
 def main():
